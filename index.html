@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+				content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+	<title>大屏可视化项目</title>
+<script type="module" crossorigin src="./assets/index.8c7f4af5.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.cb031f4d.js">
+  <link rel="stylesheet" href="./assets/index.d1ea1f05.css">
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const clientWidth = document.documentElement.clientWidth
+  window.clientHeight = document.documentElement.clientHeight
+  let pageWidth
+  if (clientWidth / clientHeight > 16 / 9) {
+    pageWidth = clientHeight * (16 / 9)
+  } else {
+    pageWidth = clientWidth / (16 / 9)
+  }
+  const pageHeight = pageWidth / (16 / 9)
+  const string = `<style>
+	html{
+	font-size:${pageWidth / 100}px
+	}</style>
+`
+  document.write(string)
+</script>
+<script>
+	// root.style.width=pageWidth+'px'
+	root.style.height=pageHeight+'px'
+	root.style.marginTop=(clientHeight-pageHeight)/2+'px'
+</script>
+
+</body>
+</html>
